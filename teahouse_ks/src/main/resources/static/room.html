@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>房间管理系统</title>
+    <link rel="stylesheet" href="css/room.css">
+</head>
+<body>
+<div class="container">
+    <h1>房间管理系统</h1>
+
+    <!-- 添加房间 -->
+    <div class="card" id="addRoomCard">
+        <h2>添加房间</h2>
+        <button class="expand-btn">展开/收起</button>
+        <div class="card-content">
+            <form id="addRoomForm">
+                <input type="number" id="addRoomId" placeholder="房间ID" required>
+                <input type="text" id="addRoomName" placeholder="房间名称" required>
+                <input type="number" id="addRoomCapacity" placeholder="可容纳人数" required>
+                <input type="checkbox" id="addRoomAvailable"> 是否可用
+                <input type="number" id="addRoomRemainingUsageTime" placeholder="剩余使用时间" required>
+                <input type="datetime-local" id="addRoomUpdatedTime" required>
+                <button type="submit">添加房间</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 更新房间 -->
+    <div class="card" id="updateRoomCard">
+        <h2>更新房间</h2>
+        <button class="expand-btn">展开/收起</button>
+        <div class="card-content">
+            <form id="updateRoomForm">
+                <input type="number" id="updateRoomId" placeholder="房间ID" required>
+                <input type="text" id="updateRoomName" placeholder="房间名称">
+                <input type="number" id="updateRoomCapacity" placeholder="可容纳人数">
+                <input type="checkbox" id="updateRoomAvailable"> 是否可用
+                <input type="number" id="updateRoomRemainingUsageTime" placeholder="剩余使用时间">
+                <input type="datetime-local" id="updateRoomUpdatedTime">
+                <button type="submit">更新房间</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 删除房间 -->
+    <div class="card" id="deleteRoomCard">
+        <h2>删除房间</h2>
+        <button class="expand-btn">展开/收起</button>
+        <div class="card-content">
+            <form id="deleteRoomForm">
+                <input type="number" id="deleteRoomId" placeholder="房间ID" required>
+                <button type="submit">删除房间</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 查询单个房间 -->
+    <div class="card" id="getRoomCard">
+        <h2>查询房间</h2>
+        <button class="expand-btn">展开/收起</button>
+        <div class="card-content">
+            <form id="getRoomForm">
+                <input type="number" id="getRoomId" placeholder="房间ID" required>
+                <button type="submit">查询房间</button>
+            </form>
+            <div id="roomInfo"></div>
+        </div>
+    </div>
+
+    <!-- 查询剩余时间小于指定值的房间 -->
+    <div class="card" id="getRoomsByTimeCard">
+        <h2>查询剩余时间小于指定值的房间</h2>
+        <button class="expand-btn">展开/收起</button>
+        <div class="card-content">
+            <form id="getRoomsByTimeForm">
+                <input type="number" id="remainingTime" placeholder="剩余时间 (小时)" required>
+                <button type="submit">查询</button>
+            </form>
+            <div id="roomsByTimeInfo"></div>
+        </div>
+    </div>
+
+    <!-- 查询所有房间 -->
+    <div class="card" id="getAllRoomsCard">
+        <h2>查询所有房间</h2>
+        <button class="expand-btn">展开/收起</button>
+        <div class="card-content">
+            <button id="getAllRoomsButton">获取所有房间</button>
+            <div id="allRoomsInfo"></div>
+        </div>
+    </div>
+    <!-- 返回主界面的按钮 -->
+    <a href="main.html" class="btn">返回主界面</a>
+</div>
+
+<script src="js/room.js"></script>
+</body>
+</html>

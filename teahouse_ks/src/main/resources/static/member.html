@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成员管理</title>
+    <link rel="stylesheet" href="css/member.css">
+</head>
+<body>
+<div class="container">
+    <h1>成员管理系统</h1>
+
+    <div class="alert"></div>
+
+    <!-- 添加成员卡片 -->
+    <div class="card">
+        <div class="collapse-btn" onclick="toggleCollapse('addMemberForm')">+ 添加成员</div>
+        <div id="addMemberForm" class="collapse">
+            <div class="form-container">
+                <div class="form-group">
+                    <input type="number" id="addId" placeholder="ID" required>
+                    <input type="text" id="addName" placeholder="姓名" required>
+                    <input type="text" id="addPhone" placeholder="电话" required>
+                    <input type="number" id="addPoint" placeholder="余额" required>
+                    <input type="text" id="addLevel" placeholder="等级" required>
+                    <button onclick="addMember()">添加成员</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 更新成员卡片 -->
+    <div class="card">
+        <div class="collapse-btn" onclick="toggleCollapse('updateMemberForm')">+ 更新成员</div>
+        <div id="updateMemberForm" class="collapse">
+            <div class="form-container">
+                <div class="form-group">
+                    <input type="number" id="updateId" placeholder="ID" required>
+                    <input type="text" id="updateName" placeholder="姓名" required>
+                    <input type="text" id="updatePhone" placeholder="电话" required>
+                    <input type="number" id="updatePoint" placeholder="余额" required>
+                    <input type="text" id="updateLevel" placeholder="等级" required>
+                    <button onclick="updateMember()">更新成员</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 删除成员卡片 -->
+    <div class="card">
+        <div class="collapse-btn" onclick="toggleCollapse('deleteMemberForm')">+ 删除成员</div>
+        <div id="deleteMemberForm" class="collapse">
+            <div class="form-container">
+                <div class="form-group">
+                    <input type="number" id="deleteId" placeholder="ID" required>
+                    <button onclick="deleteMember()">删除成员</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 获取单个成员卡片 -->
+    <div class="card">
+        <div class="collapse-btn" onclick="toggleCollapse('getMemberForm')">+ 获取成员</div>
+        <div id="getMemberForm" class="collapse">
+            <div class="form-container">
+                <div class="form-group">
+                    <label for="getId">通过 ID 查询:</label>
+                    <input type="number" id="getId" placeholder="请输入ID">
+                    <button onclick="getMember()">获取成员</button>
+                </div>
+                <div class="form-group">
+                    <label for="getPhone">通过手机号查询:</label>
+                    <input type="text" id="getPhone" placeholder="请输入手机号">
+                    <button onclick="getMember()">获取成员</button>
+                </div>
+            </div>
+            <div class="info">
+                <p id="getName"></p>
+                <p id="getPoint"></p>
+                <p id="getLevel"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 提示框 -->
+    <div id="alertBox" class="alert" style="display:none;"></div>
+
+    <!-- 获取所有成员卡片 -->
+    <div class="card">
+        <div class="collapse-btn" onclick="toggleCollapse('allMembers')">+ 查看所有成员</div>
+        <div id="allMembers" class="collapse">
+            <div class="members-list">
+                <ul id="membersList"></ul>
+            </div>
+        </div>
+    </div>
+    <!-- 返回主界面的按钮 -->
+    <a href="main.html" class="btn">返回主界面</a>
+</div>
+<script src="js/member.js"></script>
+</body>
+</html>

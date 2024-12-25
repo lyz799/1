@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>产品管理</title>
+  <link rel="stylesheet" href="css/product.css">
+</head>
+<body>
+<div class="container">
+  <h1>产品管理</h1>
+
+  <div class="card">
+    <h2>添加产品</h2>
+    <form id="addProductForm">
+      <label for="id">产品号:</label>
+      <input type="number" id="id" required>
+      <label for="name">产品名称:</label>
+      <input type="text" id="name" required>
+      <label for="category">类别:</label>
+      <input type="text" id="category" required>
+      <label for="price">价格:</label>
+      <input type="number" id="price" required>
+      <label for="stock">库存:</label>
+      <input type="number" id="stock" required>
+      <button type="submit">添加产品</button>
+    </form>
+    <div id="addProductResult"></div>
+  </div>
+
+  <div class="card">
+    <h2>查询产品</h2>
+    <input type="number" id="getProductId" placeholder="输入产品ID">
+    <button onclick="getProduct()">查询</button>
+    <div id="getProductResult"></div>
+  </div>
+
+  <div class="card">
+    <h2>更新产品</h2>
+    <form id="updateProductForm">
+      <label for="updateId">产品ID:</label>
+      <input type="number" id="updateId" required>
+      <label for="updateName">产品名称:</label>
+      <input type="text" id="updateName">
+      <label for="updateCategory">类别:</label>
+      <input type="text" id="updateCategory">
+      <label for="updatePrice">价格:</label>
+      <input type="number" id="updatePrice">
+      <label for="updateStock">库存:</label>
+      <input type="number" id="updateStock">
+      <button type="submit">更新产品</button>
+    </form>
+    <div id="updateProductResult"></div>
+  </div>
+
+  <div class="card">
+    <h2>删除产品</h2>
+    <input type="number" id="deleteProductId" placeholder="输入产品ID">
+    <button onclick="deleteProduct()">删除</button>
+    <div id="deleteProductResult"></div>
+  </div>
+
+  <div class="card">
+    <h2>价格区间查询</h2>
+    <label for="minPrice">最低价格:</label>
+    <input type="number" id="minPrice">
+    <label for="maxPrice">最高价格:</label>
+    <input type="number" id="maxPrice">
+    <button onclick="getProductsInPriceRange()">查询</button>
+    <div id="priceRangeResult"></div>
+  </div>
+
+  <div class="card">
+    <h2>计算总价</h2>
+    <input type="number" id="calculateProductId" placeholder="产品ID">
+    <input type="number" id="quantity" placeholder="数量">
+    <button onclick="calculateTotalPrice()">计算总价</button>
+    <div id="totalPriceResult"></div>
+  </div>
+</div>
+<!-- 返回主界面的按钮 -->
+<a href="main.html" class="btn">返回主界面</a>
+
+<script src="js/product.js"></script>
+</body>
+</html>
